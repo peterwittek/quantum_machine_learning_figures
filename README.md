@@ -1,6 +1,6 @@
 This repository stores the source code of the figures in the book Quantum Machine Learning: What Quantum Computing Means to Data Mining. More information on the book is here:
 
-[http://peterwittek.com/](http://peterwittek.com/)
+[http://peterwittek.com/book](http://peterwittek.com/book)
 
 Dependencies
 ==
