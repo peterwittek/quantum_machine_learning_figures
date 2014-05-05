@@ -6,4 +6,4 @@ Dependencies
 ==
 The LaTeX files use tikz, which should be standard in most TeX distribution. 
 
-The Python files use matplotlib, numpy, and seaborn. Furthermore, LaTeX is used for rendering text, hence a LaTeX compiler should be in the path.
+The Python files use matplotlib, numpy, and seaborn. Furthermore, LaTeX is used for rendering text, hence a LaTeX compiler should be in the path. Plotting the Bloch sphere also requires the QuTIP toolbox.

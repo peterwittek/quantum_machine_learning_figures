@@ -30,11 +30,11 @@ def setup_figure(ax):
         item.set_fontsize(FONT_SIZE)
     
     for tick in plt.gca().xaxis.get_major_ticks():
-      tick.label1.set_fontsize(0.85*FONT_SIZE)
+      tick.label1.set_fontsize(FONT_SIZE)
       tick.tick1line.set_markeredgewidth(MP_LINEWIDTH)
       tick.tick1line.set_markersize(0.5*MP_TICKSIZE)
     for tick in plt.gca().yaxis.get_major_ticks():
-      tick.label1.set_fontsize(0.85*FONT_SIZE)
+      tick.label1.set_fontsize(FONT_SIZE)
       tick.tick1line.set_markeredgewidth(MP_LINEWIDTH)
       tick.tick1line.set_markersize(0.5*MP_TICKSIZE)
     legend = ax.legend(loc='upper left', shadow=False, handlelength=5)
