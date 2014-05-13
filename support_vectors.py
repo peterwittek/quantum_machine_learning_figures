@@ -44,7 +44,7 @@ for x2, y2 in zip(support_vectors_x2, support_vectors_y2):
 handles, labels = ax.get_legend_handles_labels()
 ax.legend(handles, labels, loc=4)
 
-#plt.axis('off')
+plt.axis('off')
 ax.set_xlim([-1.1,1.1])
 ax.set_ylim([-0.7, 1.5])
 
