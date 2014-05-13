@@ -1,0 +1,55 @@
+\documentclass[12pt]{standalone}
+% Based on http://www.texample.net/tikz/examples/neural-network/
+
+\usepackage[rgb]{xcolor}
+\definecolor{color1}{RGB}{0,114,178}
+\definecolor{color2}{RGB}{0,158,115}
+\definecolor{color3}{RGB}{213,94,0}
+
+\usepackage{tikz}
+
+\begin{document}
+
+\def\layersep{2.5cm}
+
+\begin{tikzpicture}[shorten >=1pt,->,draw=black!80, node distance=\layersep]
+    \tikzstyle{every pin edge}=[<-,shorten <=1pt]
+    \tikzstyle{neuron}=[circle,fill=black!25,minimum size=17pt,inner sep=0pt]
+    \tikzstyle{phantomneuron}=[circle,fill=black!0,minimum size=17pt,inner sep=0pt]
+    \tikzstyle{annot} = [text width=4em, text centered]
+
+    % Draw the input layer nodes
+    \foreach \name / \y in {1/1,2/2,$d$/4}
+        \node[phantomneuron] (I-\y) at (0,-\y) {\name};
+    \node (I-3) at (0,-3) {\vdots};
+
+    % Draw the hidden layer nodes
+    \foreach \name / \y in {1/1,2/2,$K$/4}
+          \node[neuron] (H-\y) at (\layersep,-\y) {\name};
+    \node (H-3) at (\layersep,-3) {\vdots};
+
+    \foreach \name / \y in {1/1,2/2,$d$/4}
+           \node[phantomneuron] (O-\y) at (2*\layersep,-\y) {};
+
+    % Connect every node in the input layer with every node in the
+    % hidden layer.
+    \foreach \source in {1,2,4}
+            \path[very thick] (I-\source) edge (H-\source);
+   
+    % Connect every node in the hidden layer with the output layer
+    \foreach \source in {1,2,4}
+            \path[very thick] (H-\source) edge (O-\source);
+            
+    \foreach \dest / \y in {1/1, 2/2, $d$/4}
+        \draw[thick,color=color1] (H-1) -- + (0.5, 0.5) -- + (0.5, 1.1) --+ (-1.1, 1.1) -- + (-1.1, -\y+1.3) -- + (H-\y);
+
+    \foreach \dest / \y in {1/1, 2/2, $d$/4}
+        \draw[thick,color=color2] (H-2) -- + (0.7, 0.5) -- + (0.7, 1.9) -- + (-0.9, 1.9) -- + (-0.9, -\y+2.5) -- + (H-\y);
+
+    \foreach \dest / \y in {1/1, 2/2, $d$/4}
+        \draw[thick,color=color3] (H-4) -- + (0.9, 0.5) -- + (0.9,3.7) -- + (-0.7, 3.7) -- + (-0.7, -\y+4.7) -- + (H-\y);
+
+
+\end{tikzpicture}
+% End of code
+\end{document}
