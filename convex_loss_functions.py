@@ -25,17 +25,17 @@ y_zero_one = [zero_one(t) for t in x]
 colors = initialize_graphics()
 
 fig, ax = plt.subplots()
-fig.set_size_inches(cm2inch([10,10]))
-plt.plot(x, y_zero_one, color='black', linewidth=2, label='Zero-one')
+fig.set_size_inches(cm2inch([14,10]))
+plt.plot(x, y_zero_one, color='black', linewidth=3, label='Zero-one')
 plt.plot(x, y_boosting, color=colors[0], linewidth=2, label='Exponential')
-plt.plot(x, y_hinge_loss, color=colors[1], linewidth=2, label='Hinge loss')
-plt.plot(x, y_least_square, color=colors[2], linewidth=2, label='Least square')
+plt.plot(x, y_hinge_loss, '--', color=colors[1], linewidth=2, label='Hinge loss')
+plt.plot(x, y_least_square, ':', color=colors[2], linewidth=3, label='Least square')
 
 handles, labels = ax.get_legend_handles_labels()
 ax.legend(handles, labels, loc=4)
 
 #plt.axis('off')
 ax.set_xlim([-5, 8])
-ax.set_ylim([0, 7])
+ax.set_ylim([0, 5])
 
 plt.savefig('./convex_loss_functions.pdf',bbox_inches='tight')
