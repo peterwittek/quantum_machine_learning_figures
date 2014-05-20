@@ -1,0 +1,45 @@
+% Based on 
+% http://www.texample.net/tikz/examples/red-black-tree/
+
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\tikzset{
+  treenode/.style = {align=center, inner sep=0pt, text centered,
+    font=\sffamily},
+  vertex/.style = {treenode, circle, black, font=\sffamily\bfseries, draw=black,
+    fill=black, text width=0.3em},
+}
+
+\begin{document}
+\begin{tikzpicture}[-,>=stealth',level/.style={sibling distance = 7cm/#1,
+  level distance = 1.5cm}] 
+\node [vertex] {}
+    child{ node [vertex] {} 
+            child{ node [vertex] {} 
+            	child{ node [vertex] {}            	
+              }
+            	child{ node [vertex] {}            	
+              }
+            }
+            child{ node [vertex] {}
+            	child{ node [vertex] {}            	
+              }
+            	child{ node [vertex] {}            	
+              }
+            }                            
+    }
+    child{ node [vertex] {}
+            child{ node [vertex] {} 
+							child{ node [vertex] {}}
+							child{ node [vertex] {}}
+            }
+            child{ node [vertex] {}
+							child{ node [vertex] {}}
+							child{ node [vertex] {}}
+            }
+		}
+; 
+\end{tikzpicture}
+\end{document}
