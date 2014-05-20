@@ -9,11 +9,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from common_graphics_settings import initialize_graphics
 
-#fig, axes = plt.subplots(2,2)
-#((ax1, ax2), (ax3, ax4)) = axes # unpack the axes
-
 colors = initialize_graphics()
-fig = plt.figure(1,figsize=(7,5))
+fig = plt.figure(1,figsize=(5,5))
 ax1 = fig.add_subplot(111)
 
 # Right side of the diagram
@@ -27,7 +24,7 @@ plt.text( 11.5, -3.3, 'Thermal\n annealing',fontsize=14)
 ax1.annotate('', xy=(14.8, -13.1), xytext=(9.5, -13.1),
             arrowprops=dict(facecolor=colors[2], shrink=0.05),
             )
-plt.text( 9.8, -16.5, 'Quantum\n tunneling',fontsize=14)
+plt.text( 8.3, -16.5, 'Quantum\n tunneling',fontsize=14)
             
 plt.axis('off')
 plt.savefig('./quantum_annealing.pdf',bbox_inches='tight')
