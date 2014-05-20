@@ -25,7 +25,7 @@ y_zero_one = [zero_one(t) for t in x]
 colors = initialize_graphics()
 
 fig, ax = plt.subplots()
-fig.set_size_inches(cm2inch([14,10]))
+fig.set_size_inches(cm2inch([10,7]))
 plt.plot(x, y_zero_one, color='black', linewidth=3, label='Zero-one')
 plt.plot(x, y_boosting, color=colors[0], linewidth=2, label='Exponential')
 plt.plot(x, y_hinge_loss, '--', color=colors[1], linewidth=2, label='Hinge loss')
